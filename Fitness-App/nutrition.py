@@ -61,8 +61,10 @@ while True:
                 try:
                     number = float(quantity)
                     # adds to the calories intake
-                    calories += value.calories_eaten(number)
+                    calories_eaten = value.calories_eaten(number)
+                    calories += calories_eaten
                     print()
+                    print(f'You eated {calories_eaten} calories from {eated}!')
                     break
                 except ValueError:
                     print('Invalid quantity, please enter a valid number!')
