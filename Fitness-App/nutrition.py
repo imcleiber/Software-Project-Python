@@ -77,7 +77,7 @@ while True:
                 break
     # if the user wants to check the calorie intake       
     elif action == '2':
-        print(f'Your current calories intake is: {calories}\n')
+        print(f'Your current calories intake is: {calories}kcal!\n')
     elif action == '3':
         break
     else:

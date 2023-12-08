@@ -13,7 +13,7 @@ class tracker():
     
     def save_progress(self, filename):
         with open(filename, 'w', newline='') as file:
-            fieldnames = ['time', 'activity', 'duration']
+            fieldnames = ['timestamp', 'activity', 'duration']
             writer = csv.DictWriter(file, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(self.data)
@@ -22,7 +22,7 @@ class tracker():
         activities = [entry['activity'] for entry in self.data]
         durations = [entry['duration'] for entry in self.data]
 
-        plt.plot(activities, durations, marker='o')
+        plt.plot(activities, durations, marker='o', linestyle='')
         plt.xlabel('activities')
         plt.ylabel('Duration (minutes)')
         plt.title('Fitness Activities Made')
@@ -35,7 +35,8 @@ tracking = tracker()
 while True:
     print('1 - Record an activity')
     print('2 - Check on my activities')
-    print('3 - Quit\n')
+    print('3 - Save my progress')
+    print('4 - Quit\n')
 
     action = input('What would you like to do? ')
     if action == '1':
@@ -58,6 +59,8 @@ while True:
     elif action == '2':
         tracking.plot_activities()
     elif action == '3':
+        tracking.save_progress('fitness_data.csv')
+    elif action == '4':
         break
     else:
         print('Select a valid option!\n')
