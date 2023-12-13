@@ -1,7 +1,7 @@
 def nutrition():
     class food():
         # calories per gram of a food
-        def __init__(self):
+        def __init__(self, kcalpgram):
             self.kcalpgram = 0
         # calories eaten by the quantity of food
         def calories_eaten(self, grams):
