@@ -1,11 +1,7 @@
 def forum():
     class post():
         def __init__(self, name, message):
-            self.name = 'Anonymous'
-            self.message = 'Hello, World!'
-        def change_name(self, name):
             self.name = name
-        def change_message(self, message):
             self.message = message
     
     class topic():
@@ -51,8 +47,6 @@ def forum():
                     name = input("Enter your name: ")
                     message = input("Enter your message: ")
                     posting = post(name, message)
-                    posting.change_name(name)
-                    posting.change_message(message)
                     my_topic.add_message(posting)
                     print("Message posted!")
                     break
