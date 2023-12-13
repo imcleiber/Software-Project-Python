@@ -3,6 +3,7 @@ import goal_tracking
 import workout_plan
 import activity_tracking
 import forum
+import content
 
 print("Welcome to the Fitness App from Software Project discipline!")
 print("This app was created by Cleiber de Meireles\n\n\n\n\n")
@@ -13,7 +14,8 @@ while True:
     print("3 - Activity Tracking")
     print("4 - Goal Setting and Progress Tracking")
     print("5 - Comunity and Forum Access")
-    print("6 - Quit")
+    print("6 - Video Tutorial and Guides")
+    print("7 - Quit")
 
     action = input("Please, choose an option: ")
     print()
@@ -30,6 +32,8 @@ while True:
     elif action == '5':
         forum.forum()
     elif action == '6':
+        content.content()
+    elif action == '7':
         break
     else:
         print("Please, select a valid option")
