@@ -19,7 +19,9 @@ def forum():
     class forum:
         def __init__(self):
             self.topics = {}
-        def add_topic(self, new_topic, topic_string):
+        def add_topic(self, topic_string):
+            new_topic = topic_string
+            new_topic = topic()
             topic_string = topic_string.title()
             self.topics[f'{topic_string}'] = new_topic
         def print_topics(self):
@@ -28,8 +30,7 @@ def forum():
 
 
     new_forum = forum()
-    motivation = topic()
-    new_forum.add_topic(motivation, 'Motivation')
+    new_forum.add_topic('Motivation')
 
     while True:
         print("1 - Post a new message")
@@ -40,8 +41,12 @@ def forum():
         action = input("Enter your option: ")
 
         if action == '1':
+            print("These are the topics available in the moment:")
+            new_forum.print_topics()
             while True:
+                
                 subject = input("Enter the topic you want to post your message: ")
+                subject = subject.title()
                 if subject in new_forum.topics:
                     my_topic = new_forum.topics[subject]
                     name = input("Enter your name: ")
@@ -62,11 +67,18 @@ def forum():
                 if choose in new_forum.topics:
                     wanted_topic = new_forum.topics[choose]
                     wanted_topic.print_messages()
+                    print()
                     break
                 else:
-                    print("Please, select a valid topic.")
+                    print("Please, select a valid topic.\n")
         elif action == '3':
-            print("Feature not added yet.")
+            new_t = input("Enter the topic name you want to add: ")
+            new_t = new_t.title()
+            if new_t in new_forum.topics:
+                print("This topic already exists.\n")
+            else:
+                new_forum.add_topic(new_t)
+                print("New topic added!\n")
         elif action == '4':
             break
         else:
