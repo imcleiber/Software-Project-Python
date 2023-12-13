@@ -8,3 +8,8 @@ Features added to the Fitness App:
 4 - Goal Setting and Progress Tracking
 5 - Video Tutorials and Guides
 6 - Community and Forum Access
+7 - Personalized Recommendations
+
+To run the Fitness App:
+You'll need to save all .py documents in the same folder
+Then, just run the main.py
