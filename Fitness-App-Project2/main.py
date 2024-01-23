@@ -1,10 +1,10 @@
-import nutrition
-import goal_tracking
-import workout_plan
-import activity_tracking
-import forum
-import content
-import recommendations
+from nutrition import *
+from goal_tracking import *
+from workout_plan import *
+from activity_tracking import *
+from forum import *
+from content import *
+from recommendations import *
 
 print("Welcome to the Fitness App from Software Project discipline!")
 print("This app was created by Cleiber de Meireles\n\n\n")
@@ -24,19 +24,19 @@ while True:
     print()
 
     if action == '1':
-        workout_plan.workout_plan()
+        workout_plan()
     elif action == '2':
-        nutrition.nutrition()
+        nutrition()
     elif action == '3':
-        activity_tracking.activity_tracking()
+        activity_tracking()
     elif action == '4':
-        goal_tracking.goal_tracking()
+        goal_tracking()
     elif action == '5':
-        forum.forum()
+        forum()
     elif action == '6':
-        content.content()
+        content()
     elif action == '7':
-        recommendations.recommendations()
+        recommendations()
     elif action == '8':
         break
     else:
