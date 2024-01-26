@@ -15,9 +15,15 @@ class paired_devices():
         if device in self.devices:
             print("Device alrealdy paired")
             return
-        new_device = device
-        new_device = pair_device(device, access)
-        self.devices[f'{device}'] = new_device
+        else:
+            new_device = device
+            print("acess code:", access)
+            access_value = input("Enter the access code: ")
+            if(access_value == access):
+                new_device = pair_device(device, access)
+                self.devices[f'{device}'] = new_device
+            else:
+                print("Wrong access code!")
     def print_devices(self):
         for dispositivos in self.devices:
             dispositivos.print_device()
@@ -26,20 +32,14 @@ class connection():
     def __init__(self):
         self.Is_connected = False
         self.device_connected = 'None'
-    def connect(self, device, access, device_list):
+    def connect(self, device, device_list):
         device = device.upper()
-        for dispositivo in device_list:
-            if dispositivo == device:
-                break
-            else:
-                print('Device not found')
-                return
-        codigo = dispositivo
-        if access == codigo:
+        if device in device_list:
             self.Is_connected = True
-            self.device_connected = dispositivo
+            self.device_connected = device
         else:
-            print('Wrong access code')
+            print('Device not found')
+            return
     def disconnect(self):
         self.Is_connected = False
         self.device_connected = 'None'
