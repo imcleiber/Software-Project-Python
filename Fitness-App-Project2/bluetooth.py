@@ -52,6 +52,12 @@ class connection():
         self.Is_connected = False
         self.device_connected = 'None'
         print('Device disconnected.')
+    def status(self):
+        if self.Is_connected == True:
+            print('The Bluetooth is currently connected to a device')
+            print('Device connected: ', self.device_connected)
+        else:
+            print('Currently, there is no device connected on Bluetooth')
 
 devices_paired = paired_devices()
 connect = connection()
@@ -61,8 +67,9 @@ while True:
     print('2 - Unpair device')
     print('3 - Connect a paired device')
     print('4 - Disconnect device')
-    print('5 - Show all paired devices')
-    print('6 - Quit')
+    print('5 - Show the current device connected')
+    print('6 - Show all paired devices')
+    print('7 - Quit')
 
     option = input('Select and option: ')
     if option == '1':
@@ -77,8 +84,13 @@ while True:
         connect_this_device = input('Which paired device you wish to connect? ')
         connect.connect(connect_this_device, devices_paired.devices)
     elif option == '4':
+        connect.disconnect()
     elif option == '5':
+        connect.status()
     elif option == '6':
+        devices_paired.print_devices()
+    elif option == '7':
+        break
     else:
         print('Please, select a valid option!')
         continue    
