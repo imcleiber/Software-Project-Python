@@ -69,9 +69,13 @@ while True:
         pair_this_device = input('Enter the device name: ')
         random_code = random.randint(1000, 9999)
         new_device = devices_paired.pair_device(pair_this_device, random_code)
-        
+
     elif option == '2':
+        devices_paired.unpair_device()
     elif option == '3':
+        devices_paired.print_devices()
+        connect_this_device = input('Which paired device you wish to connect? ')
+        connect.connect(connect_this_device, devices_paired.devices)
     elif option == '4':
     elif option == '5':
     elif option == '6':
