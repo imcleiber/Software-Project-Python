@@ -27,6 +27,14 @@ class paired_devices():
     def print_devices(self):
         for dispositivos in self.devices:
             dispositivos.print_device()
+    def unpair_device(self):
+        self.print_devices()
+        unpair = input('Which device you wish to unpair?')
+        unpair = unpair.upper()
+        if unpair in self.devices:
+            del self.devices[f'{unpair}']
+        else:
+            print('the', unpair, 'device is not on the paired devices list.')
 
 class connection():
     def __init__(self):
@@ -43,9 +51,30 @@ class connection():
     def disconnect(self):
         self.Is_connected = False
         self.device_connected = 'None'
+        print('Device disconnected.')
+
+devices_paired = paired_devices()
+connect = connection()
 
 while True:
     print('1 - Pair a device on Bluetooth')
-    print('2 - Connect a paired device')
-    print('3 - Show all connected devices')
+    print('2 - Unpair device')
+    print('3 - Connect a paired device')
+    print('4 - Disconnect device')
+    print('5 - Show all paired devices')
+    print('6 - Quit')
 
+    option = input('Select and option: ')
+    if option == '1':
+        pair_this_device = input('Enter the device name: ')
+        random_code = random.randint(1000, 9999)
+        new_device = devices_paired.pair_device(pair_this_device, random_code)
+        
+    elif option == '2':
+    elif option == '3':
+    elif option == '4':
+    elif option == '5':
+    elif option == '6':
+    else:
+        print('Please, select a valid option!')
+        continue    
