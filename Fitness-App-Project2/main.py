@@ -5,6 +5,7 @@ from activity_tracking import *
 from forum import *
 from content import *
 from recommendations import *
+from bluetooth import *
 
 print("Welcome to the Fitness App from Software Project discipline!")
 print("This app was created by Cleiber de Meireles\n\n\n")
@@ -17,7 +18,8 @@ while True:
     print("5 - Comunity and Forum Access")
     print("6 - Video Tutorial and Guides")
     print("7 - Personalized Recommendations")
-    print("8 - Quit")
+    print("8 - Bluetooth connection")
+    print("9 - Quit")
 
     action = input("Please, choose an option: ")
     print()
@@ -38,6 +40,8 @@ while True:
     elif action == '7':
         recommendations()
     elif action == '8':
+        bluetooth()
+    elif action == '9':
         break
     else:
         print("Please, select a valid option")
