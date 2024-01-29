@@ -2,11 +2,19 @@ def bluetooth():
     import random
 
     class pair_device():
-        def __init__(self, device_name, access_code):
-            self.device_name = device_name
-            self.access_code = access_code
+        def __init__(self):
+            self._device_name = 'None'
+            self._access_code = '0000'
+        def set_name(self, name):
+            self._device_name = name
+        def set_access(self, access):
+            self._access_code = access
+        def get_name(self):
+            return self._device_name
+        def get_access(self):
+            return self._access_code
         def print_device(self):
-            print('Device Name: ', self.device_name, 'Bluetooth Access Code: ', self.access_code)
+            print('Device Name: ', self.get_name(), 'Bluetooth Access Code: ', self.get_access())
     
     class paired_devices():
         def __init__(self):
@@ -22,7 +30,9 @@ def bluetooth():
                 access_value = input("Enter the access code: ")
                 access_value = int(access_value)
                 if(access_value == access):
-                    new_device = pair_device(device, access)
+                    new_device = pair_device()
+                    new_device.set_name(device)
+                    new_device.set_access(access)
                     self.devices[f'{device}'] = new_device
                     print('Device paired succesfully!\n\n')
                 else:
@@ -80,7 +90,7 @@ def bluetooth():
             pair_this_device = input('Enter the device name: ')
             random_code = random.randint(1000, 9999)
             print('Working on it...\n.\n.')
-            new_device = devices_paired.pair_device(pair_this_device, random_code)
+            devices_paired.pair_device(pair_this_device, random_code)
             print('Done!')
         elif option == '2':
             devices_paired.print_devices()
