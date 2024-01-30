@@ -9,23 +9,14 @@ def nutrition():
             return calories
 
     # creating objects with the class food
-    chicken = food()
-    # changing the kcalpgram from the food
-    chicken.kcalpgram = 2.39
-    rice = food()
-    rice.kcalpgram = 1.30
-    broccoli = food()
-    broccoli.kcalpgram = 0.34
-    bread = food()
-    bread.kcalpgram = 2.65
-    steak = food()
-    steak.kcalpgram = 2.71
-    pizza = food()
-    pizza.kcalpgram = 2.66
-    hamburguer = food()
-    hamburguer.kcalpgram = 2.95
-    fries = food()
-    fries.kcalpgram = 3.12
+    chicken = food(2.39)
+    rice = food(1.30)
+    broccoli = food(0.34)
+    bread = food(2.65)
+    steak = food(2.71)
+    pizza = food(3.00)
+    hamburguer = food(2.95)
+    fries = food(3.12)
 
     # Creating the dictionary with foods
     foods = {}

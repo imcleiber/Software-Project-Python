@@ -1,4 +1,5 @@
 def workout_plan():
+    
     while True:
         while True:
             print('1 - create a new workout plan')
