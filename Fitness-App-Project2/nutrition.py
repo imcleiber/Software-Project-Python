@@ -59,6 +59,7 @@ def nutrition():
                         break
                     except ValueError:
                         print('Invalid quantity, please enter a valid number!')
+                        continue
                 selection = input('Is that all? (yes or no) ')
                 print()
                 selection = selection.lower()
