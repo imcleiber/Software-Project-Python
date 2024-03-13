@@ -44,7 +44,7 @@ def recommendations():
             self.training = training
         
         def print_profile(self):
-            print("Recommendations on yout age:")
+            print("Recommendations on your age:")
             print(self.age)
             print()
             print("Recommendations on diet:")
