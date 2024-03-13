@@ -14,3 +14,5 @@ Features added to the Fitness App:
 To run the Fitness App:
 You'll need to save all .py documents in the same folder
 Then, just run the main.py
+
+The Project Pattern is on the Personalized Recommendations function
